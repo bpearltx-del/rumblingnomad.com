@@ -1,2 +1,2 @@
 # rumblingnomad.com
-All things are rumblers on the road
+All things for rumblers on the road
