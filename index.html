@@ -31,8 +31,8 @@ html,body{height:100%;height:100dvh;background:var(--asphalt);color:var(--white)
 .nav-tab.active{color:var(--amber);border-bottom-color:var(--amber)}
 .scroll-area{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .scroll-area::-webkit-scrollbar{display:none}
-.panel{display:none;padding:12px 12px 90px}
-.panel.active{display:block}
+.panel{display:none;padding:12px 12px 90px;height:0;overflow:hidden}
+.panel.active{display:block;height:auto;overflow:visible}
 .bottom-nav{display:flex;background:var(--asphalt-2);border-top:1px solid var(--asphalt-3);flex-shrink:0;padding-bottom:env(safe-area-inset-bottom)}
 .bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 4px;cursor:pointer;color:var(--smoke)}
 .bnav-item.active{color:var(--amber)}
@@ -533,9 +533,15 @@ function showPanel(id){
   document.querySelectorAll('.panel').forEach(function(p){
     p.classList.remove('active');
     p.style.display='';
+    p.style.height='';
+    p.style.overflow='';
   });
   var el=document.getElementById(id);
-  if(el) el.classList.add('active');
+  if(el){
+    el.classList.add('active');
+    var scrollArea=document.querySelector('.scroll-area');
+    if(scrollArea) scrollArea.scrollTop=0;
+  }
 }
 function openModal(id){document.getElementById(id).classList.add('open');}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
@@ -700,6 +706,13 @@ function openAIPlanner(){
   el.appendChild(wrap);
 
   showPanel('view-ai-plan');
+  // Override to flex since this panel needs flex layout
+  var aiEl=document.getElementById('view-ai-plan');
+  aiEl.style.display='flex';
+  aiEl.style.flexDirection='column';
+  aiEl.style.height='100%';
+  aiEl.style.overflow='visible';
+  aiEl.style.padding='0';
 
   // Opening message
   addAIMessage('assistant','Hey! I\'m your Rumbling Nomad trip planner. Tell me about your ride — where you\'re starting, where you want to end up, how many days you have, and what kind of riding you love. I\'ll build you a full day-by-day itinerary with stops, hotels, and a checklist.');
@@ -2054,4 +2067,3 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 </body>
 </html>
-
