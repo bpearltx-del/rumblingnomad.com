@@ -60,6 +60,45 @@ html,body{height:100%;height:100dvh;background:var(--asphalt);color:var(--white)
 .stop-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:500;color:var(--white);line-height:1.3}
 .stop-note{font-size:12px;color:var(--smoke);line-height:1.4;margin-top:1px;font-weight:300}
 .hotel-row{display:flex;gap:8px;padding-top:8px;border-top:1px solid var(--asphalt-3);font-size:12px;color:var(--smoke);line-height:1.5;margin-top:4px}
+/* MILEAGE */
+.mileage-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--asphalt-3);margin-top:6px}
+.mileage-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--smoke);flex-shrink:0}
+.mileage-input{background:var(--asphalt-3);border:1px solid var(--asphalt-4);border-radius:5px;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;padding:5px 8px;width:90px;outline:none;text-align:center}
+.mileage-input:focus{border-color:var(--amber-dim)}
+.mileage-unit{font-size:12px;color:var(--smoke)}
+.mileage-total{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--amber);margin-left:auto}
+/* WEATHER */
+.weather-card{background:var(--asphalt-3);border-radius:8px;padding:10px 12px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.weather-icon{font-size:28px;flex-shrink:0}
+.weather-info{flex:1}
+.weather-loc{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:var(--white)}
+.weather-desc{font-size:12px;color:var(--smoke);margin-top:1px}
+.weather-temps{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--amber);letter-spacing:.02em;flex-shrink:0}
+.weather-loading{font-size:12px;color:var(--smoke);padding:8px 0}
+.weather-section{margin-bottom:12px}
+.weather-sec-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);margin-bottom:6px}
+/* PHOTOS */
+.photo-section{margin-top:10px;border-top:1px solid var(--asphalt-3);padding-top:10px}
+.photo-section-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--smoke);margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
+.photo-thumb{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;cursor:pointer;background:var(--asphalt-3)}
+.photo-thumb:active{opacity:.7}
+.photo-add-btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:8px;background:transparent;border:1px dashed var(--asphalt-4);border-radius:6px;color:var(--smoke);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.photo-add-btn:active{border-color:var(--amber);color:var(--amber)}
+.photo-input{display:none}
+.photo-count{font-size:11px;color:var(--smoke)}
+/* PHOTO VIEWER */
+.photo-viewer{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center}
+.photo-viewer.open{display:flex}
+.photo-viewer-img{max-width:100%;max-height:75vh;object-fit:contain;border-radius:4px}
+.photo-viewer-actions{display:flex;gap:10px;margin-top:16px;padding:0 16px}
+.photo-viewer-caption{font-size:13px;color:var(--smoke-light);margin-top:8px;text-align:center;padding:0 20px;line-height:1.5}
+.pv-close{position:absolute;top:16px;right:16px;background:transparent;border:none;color:var(--white);font-size:24px;cursor:pointer;padding:4px}
+/* SHARE */
+.share-btn{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:6px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;border:none}
+.share-btn.fb{background:#1877f2;color:#fff}
+.share-btn.native{background:var(--asphalt-3);border:1px solid var(--asphalt-4);color:var(--white)}
+.share-btn.copy{background:var(--asphalt-3);border:1px solid var(--asphalt-4);color:var(--white)}
 /* EDIT */
 .edit-field{background:var(--asphalt-3);border:1px solid var(--asphalt-4);border-radius:6px;color:var(--white);font-family:'Barlow',sans-serif;font-size:13px;padding:7px 10px;width:100%;outline:none;margin-bottom:6px}
 .edit-field:focus{border-color:var(--amber-dim)}
@@ -68,14 +107,12 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
 .field-label:first-child{margin-top:10px}
 .field-row{display:flex;gap:6px}
 .field-row .edit-field{margin-bottom:0}
-/* BUTTONS */
 .small-btn{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:7px 12px;border-radius:6px;cursor:pointer;border:1px solid var(--asphalt-4);background:transparent;color:var(--smoke);white-space:nowrap;flex-shrink:0}
 .small-btn.amber{background:var(--amber);color:var(--asphalt);border-color:var(--amber)}
 .small-btn.red{border-color:#450a0a;color:var(--ember)}
 .add-row-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 10px;background:transparent;border:1px dashed var(--asphalt-4);border-radius:6px;color:var(--smoke);font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;width:100%;margin-top:4px}
 .add-row-btn:active{border-color:var(--amber);color:var(--amber)}
 .edit-day-btn{display:flex;align-items:center;gap:5px;padding:6px 10px;background:transparent;border:1px solid var(--asphalt-4);border-radius:6px;color:var(--smoke);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;margin-top:10px}
-.edit-day-btn:active{border-color:var(--amber);color:var(--amber)}
 /* OVERVIEW */
 .intro-card{background:var(--asphalt-2);border:1px solid var(--asphalt-3);border-top:3px solid var(--amber);border-radius:10px;padding:12px;margin-bottom:12px}
 .intro-route{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em;color:var(--white);line-height:1}
@@ -120,12 +157,10 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
 .reset-btn{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--asphalt-4);border-radius:20px;background:transparent;color:var(--smoke);cursor:pointer}
 .add-check-row{display:flex;gap:6px;margin-top:8px}
 .add-check-row .edit-field{margin-bottom:0;flex:1}
-/* STOP EDIT */
 .stop-edit-row{display:flex;gap:6px;align-items:flex-start;margin-bottom:6px;background:var(--asphalt-3);border-radius:6px;padding:8px}
 .stop-edit-inputs{flex:1;display:flex;flex-direction:column;gap:4px}
 .stop-edit-inputs .edit-field{margin-bottom:0;background:var(--asphalt-4)}
 .stop-del-btn{background:transparent;border:none;color:var(--smoke);font-size:18px;cursor:pointer;padding:2px 0;line-height:1;flex-shrink:0;margin-top:2px}
-.stop-del-btn:active{color:var(--ember)}
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100;display:none;align-items:flex-end;justify-content:center}
 .modal-overlay.open{display:flex}
@@ -133,9 +168,7 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
 .modal-title{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;color:var(--amber);margin-bottom:12px}
 .modal-actions{display:flex;gap:8px;margin-top:14px}
 .modal-actions .small-btn{flex:1;text-align:center}
-/* SHARE */
 .share-url{background:var(--asphalt-3);border:1px solid var(--asphalt-4);border-radius:6px;padding:10px;font-size:12px;color:var(--smoke-light);word-break:break-all;line-height:1.5;margin:10px 0;font-family:monospace}
-/* TRIP LIST */
 .trip-item{background:var(--asphalt-2);border:1px solid var(--asphalt-3);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:10px}
 .trip-item:active{border-color:var(--amber)}
 .trip-info{flex:1}
@@ -144,6 +177,35 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
 .trip-arrow{color:var(--smoke);font-size:18px}
 .badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.04em;padding:2px 5px;border-radius:3px;text-transform:uppercase;display:inline-block;margin-left:4px;vertical-align:middle}
 .b-critical{background:#450a0a;color:#ef4444}
+/* JOURNAL TAB */
+.journal-day{background:var(--asphalt-2);border:1px solid var(--asphalt-3);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.journal-day-header{padding:10px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--asphalt-3)}
+.journal-day-date{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--smoke)}
+.journal-day-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;color:var(--white);flex:1}
+.journal-day-body{padding:10px 12px 12px}
+.journal-odometer{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--asphalt-3)}
+.odo-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--smoke)}
+.odo-input{background:var(--asphalt-3);border:1px solid var(--asphalt-4);border-radius:5px;color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:18px;padding:4px 8px;width:100px;outline:none;text-align:center;letter-spacing:.04em}
+.odo-input:focus{border-color:var(--amber-dim)}
+.odo-unit{font-size:12px;color:var(--smoke)}
+.odo-diff{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--amber);margin-left:auto}
+.journal-note-input{background:var(--asphalt-3);border:1px solid var(--asphalt-4);border-radius:6px;color:var(--white);font-family:'Barlow',sans-serif;font-size:13px;padding:8px 10px;width:100%;outline:none;resize:none;min-height:64px;line-height:1.5;margin-bottom:10px}
+.journal-note-input:focus{border-color:var(--amber-dim)}
+.journal-note-input::placeholder{color:var(--smoke)}
+/* PHOTO GRID in journal */
+.j-photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
+.j-photo-thumb{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;cursor:pointer;display:block}
+.j-photo-add{width:100%;aspect-ratio:1;background:var(--asphalt-3);border:1px dashed var(--asphalt-4);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;color:var(--smoke);font-size:22px}
+.j-photo-add:active{border-color:var(--amber);color:var(--amber)}
+.j-share-row{display:flex;gap:8px;flex-wrap:wrap}
+/* WEATHER in journal */
+.j-weather{display:flex;align-items:center;gap:10px;background:var(--asphalt-3);border-radius:8px;padding:8px 10px;margin-bottom:10px}
+.j-weather-icon{font-size:24px}
+.j-weather-info{flex:1}
+.j-weather-loc{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;color:var(--white)}
+.j-weather-desc{font-size:11px;color:var(--smoke);margin-top:1px}
+.j-weather-temp{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--amber)}
+.j-weather-btn{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:4px 8px;border:1px solid var(--asphalt-4);border-radius:4px;background:transparent;color:var(--smoke);cursor:pointer}
 </style>
 </head>
 <body>
@@ -166,14 +228,18 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
     <div id="panel-durango" class="panel"></div>
     <div id="panel-return" class="panel"></div>
     <div id="panel-checklist" class="panel"></div>
+    <div id="panel-journal" class="panel"></div>
+    <div id="panel-weather" class="panel"></div>
   </div>
-  <div class="bottom-nav" id="bottom-nav" style="display:none">
-    <div class="bnav-item" data-main="overview"><div class="bnav-icon">◎</div><div class="bnav-label">Overview</div></div>
-    <div class="bnav-item" data-main="down"><div class="bnav-icon">↓</div><div class="bnav-label">Down</div></div>
-    <div class="bnav-item" data-main="durango"><div class="bnav-icon">⬡</div><div class="bnav-label">Base</div></div>
-    <div class="bnav-item" data-main="return"><div class="bnav-icon">↑</div><div class="bnav-label">Return</div></div>
-    <div class="bnav-item" data-main="checklist"><div class="bnav-icon">✓</div><div class="bnav-label">Checklist</div></div>
-  </div>
+  <div class="bottom-nav" id="bottom-nav" style="display:none"></div>
+</div>
+
+<!-- PHOTO VIEWER -->
+<div class="photo-viewer" id="photo-viewer">
+  <button class="pv-close" id="pv-close">✕</button>
+  <img class="photo-viewer-img" id="pv-img" src="" alt="">
+  <div class="photo-viewer-caption" id="pv-caption"></div>
+  <div class="photo-viewer-actions" id="pv-actions"></div>
 </div>
 
 <!-- MODALS -->
@@ -187,7 +253,7 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
       <div style="flex:1"><div class="field-label">Start Date</div><input class="edit-field" id="nt-start" placeholder="Jun 7, 2025"></div>
       <div style="flex:1"><div class="field-label">End Date</div><input class="edit-field" id="nt-end" placeholder="Jun 18, 2025"></div>
     </div>
-    <div class="field-label">Tagline / Notes</div><input class="edit-field" id="nt-tag" placeholder="HOG Rally + High Desert Loop">
+    <div class="field-label">Tagline</div><input class="edit-field" id="nt-tag" placeholder="HOG Rally + High Desert Loop">
     <div class="modal-actions">
       <button class="small-btn" id="btn-cancel-trip">Cancel</button>
       <button class="small-btn amber" id="btn-save-trip">Create Trip</button>
@@ -216,7 +282,7 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
 <div class="modal-overlay" id="modal-share">
   <div class="modal">
     <div class="modal-title">Share This Trip</div>
-    <p style="font-size:13px;color:var(--smoke);line-height:1.6">Share this link with your group. Each person gets their own checklist that saves to their own device.</p>
+    <p style="font-size:13px;color:var(--smoke);line-height:1.6">Share this link with your group. Each person gets their own checklist and journal saved to their device.</p>
     <div class="share-url" id="share-url"></div>
     <div class="modal-actions">
       <button class="small-btn" id="btn-close-share">Close</button>
@@ -225,11 +291,12 @@ textarea.edit-field{resize:none;min-height:58px;line-height:1.5}
   </div>
 </div>
 
+<input type="file" id="photo-file-input" accept="image/*" multiple style="display:none">
+
 <script>
 (function(){
 'use strict';
 
-// ── Storage ───────────────────────────────────────────────
 var _m={};
 var S={
   get:function(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):null}catch(e){return _m[k]||null}},
@@ -237,7 +304,7 @@ var S={
   del:function(k){try{localStorage.removeItem(k)}catch(e){delete _m[k]}}
 };
 
-// ── Default trip ──────────────────────────────────────────
+// ── Default trip data ─────────────────────────────────────
 var DT={
   id:'brad-durango-2025',
   name:'Spokane → Durango',from:'Spokane, WA',to:'Durango, CO',
@@ -246,60 +313,60 @@ var DT={
   totalMiles:'~2,500',nights:11,budget:'$200/day',
   sections:[
     {id:'down',label:'Ride Down',icon:'↓',days:[
-      {id:'d1',date:'Sat Jun 7',title:'Spokane → Boise',miles:'~340 mi',hotel:"Best Western Plus Airport Inn, Boise · est. $90–120 · Food + fuel ~$75",
-       stops:[{n:'Spokane — early start, top off',t:"South on US-195 through the Palouse. Easy warm-up miles.",c:'#60a5fa'},
+      {id:'d1',date:'Sat Jun 7',title:'Spokane → Boise',miles:'~340 mi',hotel:"Best Western Plus Airport Inn, Boise · est. $90–120",
+       stops:[{n:'Spokane — early start, top off',t:'South on US-195 through the Palouse.',c:'#60a5fa'},
               {n:'Lewiston / Clarkston — fuel + break',t:'Snake River canyon overlook.',c:'#60a5fa'},
-              {n:'Boise, ID — overnight',t:'Good food downtown. Early night.',c:'#60a5fa'}]},
+              {n:'Boise, ID — overnight',t:'Good food downtown.',c:'#60a5fa'}]},
       {id:'d2',date:'Sun Jun 8',title:'Boise → Salt Lake City',miles:'~340 mi',hotel:"Best Western Plus CottonTree Inn, Murray · est. $100–130",
-       stops:[{n:'Twin Falls — Shoshone Falls',t:'"Niagara of the West." $5 park entry. Worth it.',c:'#22c55e'},
+       stops:[{n:'Twin Falls — Shoshone Falls',t:'"Niagara of the West." $5 park entry.',c:'#22c55e'},
               {n:'Pocatello — fuel + lunch',t:'',c:'#22c55e'},
               {n:'Salt Lake City, UT — overnight',t:'Temple Square is a quick evening walk.',c:'#22c55e'}]},
       {id:'d3',date:'Mon Jun 9',title:'SLC → Moab',miles:'~240 mi',hotel:"Best Western Plus Canyonlands Inn · est. $140–170 · BOOK NOW",
        stops:[{n:'Price, UT — fuel',t:'Castle Valley opens up. Landscape goes wild.',c:'#fb923c'},
               {n:'Green River, UT — lunch',t:'John Wesley Powell River History Museum (~$4).',c:'#fb923c'},
-              {n:'Moab, UT — overnight',t:'Cruise past Arches NP. Delicate Arch viewpoint at sunset.',c:'#fb923c'}]},
-      {id:'d4',date:'Tue Jun 10',title:"Moab → Durango via Devil's Highway",miles:'~270 mi',hotel:"Best Western Durango Inn & Suites · Ask about HOG rally rates · BOOK ASAP",
-       stops:[{n:'Monticello, UT — fuel',t:"Last easy fuel before Devil's Highway begins.",c:'#ef4444'},
-              {n:"Blanding → Bluff — US-491 South (Devil's Hwy)",t:'Red canyon walls, open high desert, Bears Ears country.',c:'#ef4444'},
-              {n:'Cortez, CO — fuel + lunch',t:'Mesa Verde NP is 10 mi east if you have energy.',c:'#ef4444'},
-              {n:'Durango, CO — arrive',t:'Check in, walk Main Ave. Steamworks Brewing for dinner.',c:'#ef4444'}]}
+              {n:'Moab, UT — overnight',t:'Cruise past Arches NP. Delicate Arch at sunset.',c:'#fb923c'}]},
+      {id:'d4',date:'Tue Jun 10',title:"Moab → Durango via Devil's Highway",miles:'~270 mi',hotel:"Best Western Durango Inn & Suites · Ask about HOG rally rates",
+       stops:[{n:'Monticello, UT — fuel',t:"Last easy fuel before Devil's Highway.",c:'#ef4444'},
+              {n:"Blanding → Bluff — US-491 (Devil's Hwy)",t:'Red canyon walls, open high desert, Bears Ears country.',c:'#ef4444'},
+              {n:'Cortez, CO — fuel + lunch',t:'Mesa Verde NP 10 mi east.',c:'#ef4444'},
+              {n:'Durango, CO — arrive',t:'Check in, walk Main Ave. Steamworks Brewing.',c:'#ef4444'}]}
     ]},
     {id:'durango',label:'Durango',icon:'⬡',days:[
-      {id:'r0',date:'Jun 10',title:'Arrival & Rest Day',miles:'',hotel:'Stay Durango all 4 nights (Jun 10–13) · est. $140–180/night',
-       stops:[{n:'Check in, unpack, stretch',t:"Walk Main Ave. Steamworks Brewing or Carver's for dinner.",c:'#f59e0b'},
-              {n:'Scout rally registration',t:'Early start Jun 11 — know where you\'re going.',c:'#f59e0b'}]},
+      {id:'r0',date:'Jun 10',title:'Arrival & Rest Day',miles:'',hotel:'Stay Durango all 4 nights · est. $140–180/night',
+       stops:[{n:'Check in, unpack, stretch',t:"Steamworks Brewing or Carver's for dinner.",c:'#f59e0b'},
+              {n:'Scout rally registration',t:'Early start Jun 11.',c:'#f59e0b'}]},
       {id:'r1',date:'Jun 11',title:'Rally Day 1 · Million Dollar Highway',miles:'~150 mi round trip',hotel:'',
-       stops:[{n:'Durango → Ouray, northbound first',t:'US-550 north. Warm-up — cliff on your left going up, no big deal.',c:'#a78bfa'},
-              {n:'Ouray — lunch + hot springs',t:'"Switzerland of America." Box Canyon waterfall.',c:'#a78bfa'},
-              {n:'Ouray → Silverton → Durango, southbound',t:'Mountain wall on LEFT, cliff on RIGHT. Red Mountain Pass 11,018 ft. The money direction.',c:'#a78bfa'}]},
+       stops:[{n:'Durango → Ouray, northbound',t:'US-550 north. Warm-up run.',c:'#a78bfa'},
+              {n:'Ouray — lunch + hot springs',t:'"Switzerland of America."',c:'#a78bfa'},
+              {n:'Ouray → Silverton → Durango, southbound',t:'Mountain wall on LEFT. Cliff on RIGHT. Red Mountain Pass 11,018 ft.',c:'#a78bfa'}]},
       {id:'r2',date:'Jun 12',title:'Rally Day 2 · Mesa Verde + Wolf Creek',miles:'',hotel:'',
-       stops:[{n:'Mesa Verde NP — morning ride',t:'35 mi west on US-160. Ancient cliff dwellings. ATB pass covers entry.',c:'#22c55e'},
-              {n:'Durango — midday rally activities',t:'',c:'#22c55e'},
-              {n:'Optional: Wolf Creek Pass',t:'US-160 east over Continental Divide at 10,850 ft.',c:'#22c55e'}]},
+       stops:[{n:'Mesa Verde NP — morning ride',t:'35 mi west on US-160. ATB pass covers entry.',c:'#22c55e'},
+              {n:'Durango — midday rally',t:'',c:'#22c55e'},
+              {n:'Optional: Wolf Creek Pass',t:'10,850 ft Continental Divide.',c:'#22c55e'}]},
       {id:'r3',date:'Jun 13',title:'Rally Day 3 · Closing Day',miles:'',hotel:'',
        stops:[{n:'Follow rally schedule',t:'Group rides, awards, events.',c:'#f59e0b'},
-              {n:'Pack + prep for early departure',t:'Fuel up the night before. Monument Valley day needs an early start.',c:'#f59e0b'}]}
+              {n:'Pack + prep for departure',t:'Fuel up tonight.',c:'#f59e0b'}]}
     ]},
     {id:'return',label:'Return',icon:'↑',days:[
-      {id:'b1',date:'Sat Jun 14',title:'Durango → Monument Valley',miles:'~160 mi',hotel:"Goulding's Lodge or Best Western Kayenta · est. $120–160 · Book early",
-       stops:[{n:'Cortez, CO — fuel',t:'Last reliable fuel before Navajo Nation.',c:'#fb923c'},
-              {n:'Four Corners Monument',t:'Stand in 4 states · $8 entry.',c:'#fb923c'},
-              {n:'Kayenta, AZ — fuel',t:'DO NOT SKIP. Last station before Monument Valley.',c:'#ef4444'},
-              {n:'Monument Valley — arrive early afternoon',t:'17-mile valley drive. The Mittens at golden hour. One of those moments.',c:'#fb923c'}]},
-      {id:'b2',date:'Sun Jun 15',title:'Monument Valley → Page, AZ',miles:'~120 mi',hotel:'Best Western View of Lake Powell · est. $130–160 · Book early',
-       stops:[{n:'Mexican Hat, UT — fuel + photo',t:'Rock formation looks exactly like a sombrero.',c:'#f59e0b'},
-              {n:'Natural Bridges NM',t:'~30 mi detour via UT-261. Three massive sandstone bridges. ATB pass covers it.',c:'#f59e0b'},
-              {n:'Page, AZ — overnight',t:'Horseshoe Bend at dusk (~1.5 mi walk). Antelope Canyon if pre-booked.',c:'#f59e0b'}]},
+      {id:'b1',date:'Sat Jun 14',title:'Durango → Monument Valley',miles:'~160 mi',hotel:"Goulding's Lodge or Best Western Kayenta · est. $120–160",
+       stops:[{n:'Cortez, CO — fuel',t:'Last fuel before Navajo Nation.',c:'#fb923c'},
+              {n:'Four Corners Monument',t:'4 states · $8 entry.',c:'#fb923c'},
+              {n:'Kayenta, AZ — fuel',t:'DO NOT SKIP.',c:'#ef4444'},
+              {n:'Monument Valley — arrive early afternoon',t:'17-mile valley drive. The Mittens at golden hour.',c:'#fb923c'}]},
+      {id:'b2',date:'Sun Jun 15',title:'Monument Valley → Page, AZ',miles:'~120 mi',hotel:'Best Western View of Lake Powell · est. $130–160',
+       stops:[{n:'Mexican Hat, UT — fuel + photo',t:'Sombrero rock formation.',c:'#f59e0b'},
+              {n:'Natural Bridges NM',t:'~30 mi detour via UT-261. ATB pass covers it.',c:'#f59e0b'},
+              {n:'Page, AZ — overnight',t:'Horseshoe Bend at dusk. Antelope Canyon if pre-booked.',c:'#f59e0b'}]},
       {id:'b3',date:'Mon Jun 16',title:'Page → Zion → St. George',miles:'~200 mi',hotel:'Best Western Plus Abbey Inn, St. George · est. $110–140',
-       stops:[{n:'Kanab, UT — fuel + lunch',t:'"Little Hollywood" — old western film town.',c:'#22c55e'},
-              {n:'Zion NP — UT-9 through the canyon',t:'Road Glide is fine in the tunnel. Canyon walls from the saddle are jaw-dropping.',c:'#22c55e'},
-              {n:'St. George, UT — overnight',t:'Easy day. Good food, red rock everywhere.',c:'#22c55e'}]},
+       stops:[{n:'Kanab, UT — fuel + lunch',t:'"Little Hollywood."',c:'#22c55e'},
+              {n:'Zion NP — UT-9 through the canyon',t:'Road Glide is fine in the tunnel.',c:'#22c55e'},
+              {n:'St. George, UT — overnight',t:'Easy day.',c:'#22c55e'}]},
       {id:'b4',date:'Tue Jun 17',title:'St. George → Winnemucca, NV',miles:'~380 mi',hotel:'Best Western Gold Country Inn, Winnemucca · est. $90–110',
-       stops:[{n:'I-15 N → I-80 W through Nevada',t:'High desert basin and range. Wide open throttle.',c:'#888'},
+       stops:[{n:'I-15 N → I-80 W through Nevada',t:'High desert, wide open throttle.',c:'#888'},
               {n:'Wells, NV — fuel',t:'',c:'#888'},
-              {n:'Winnemucca, NV — overnight',t:'Right mileage break. Casino food is cheap. Unglamorous but correct.',c:'#888'}]},
+              {n:'Winnemucca, NV — overnight',t:'Right mileage break.',c:'#888'}]},
       {id:'b5',date:'Wed Jun 18',title:'Winnemucca → Spokane 🏠',miles:'~390 mi',hotel:'',
-       stops:[{n:'I-80 W → US-95 N → US-395 N',t:'Or US-20 → US-395 through Oregon high desert.',c:'#a78bfa'},
+       stops:[{n:'I-80 W → US-95 N → US-395 N',t:'Or US-20 → US-395 through Oregon.',c:'#a78bfa'},
               {n:'Ontario, OR — fuel',t:'',c:'#a78bfa'},
               {n:'Spokane, WA — Home',t:'~6 hrs riding. Welcome back.',c:'#f59e0b'}]}
     ]}
@@ -307,121 +374,110 @@ var DT={
   checklist:{
     bike:[
       {section:'1–2 weeks before',items:[
-        {l:'Full service if due within 2,500 miles',n:"Oil, filter, plugs — don't do it in Durango"},
+        {l:'Full service if due within 2,500 miles',n:"Oil, filter, plugs"},
         {l:'Tire inspection — tread + age',n:'Replace anything questionable.',x:true},
         {l:'Tire pressure set to spec',n:'Road Glide: ~36 front / 40 rear psi cold'},
         {l:'Brake pads — front and rear',n:'MDH descents will work these hard.',x:true},
         {l:'Brake fluid level and condition',n:''},
         {l:'Drive belt inspection',n:'Check for cracks or fraying'},
         {l:'All lights working',n:'Headlight, brake, signals'},
-        {l:'Battery load test',n:'If 3+ years old, test it. Heat kills batteries.'},
-        {l:'Saddlebag latches and mounts secure',n:'Check torque on luggage rack bolts'}
+        {l:'Battery load test',n:'If 3+ years old, test it.'},
+        {l:'Saddlebag latches and mounts secure',n:''}
       ]},
-      {section:'Emergency kit on the bike',items:[
-        {l:'Tire plug kit + CO2 inflators',n:'Nearest dealer could be 100+ mi in canyon country.',x:true},
+      {section:'Emergency kit',items:[
+        {l:'Tire plug kit + CO2 inflators',n:'',x:true},
         {l:'Compact 12V mini pump',n:''},
         {l:'Basic tool roll',n:'Hex keys, screwdrivers, pliers, zip ties'},
-        {l:'Duct tape (small roll)',n:''},
-        {l:'Spare fuses — Road Glide spec',n:''}
+        {l:'Duct tape + spare fuses',n:''}
       ]}
     ],
     gear:[
       {section:'Riding gear',items:[
         {l:'Helmet — inspected, no cracks',n:'',x:true},
-        {l:'Riding jacket with CE armor',n:'Mesh for desert heat, liner for MDH at 11,000 ft'},
-        {l:'Summer vented gloves',n:'Plus warmer pair — Ouray mornings hit the 40s'},
+        {l:'Riding jacket with CE armor',n:'Mesh for desert, liner for passes'},
+        {l:'Summer vented gloves + warm pair',n:'Ouray mornings hit the 40s'},
         {l:'Riding boots — ankle protection',n:''},
-        {l:'Riding pants with armor',n:''},
-        {l:'Rain gear — jacket AND pants',n:'Colorado monsoons appear in 20 min. Keep accessible.',x:true},
-        {l:'Base layers — moisture wicking, not cotton',n:''},
-        {l:'Balaclava or neck gaiter',n:'Red Mountain Pass is 30°F cooler than Durango'},
-        {l:'Sunglasses / tinted visor',n:''}
+        {l:'Rain gear — jacket AND pants',n:'Colorado monsoons appear in 20 min.',x:true},
+        {l:'Base layers — moisture wicking',n:''},
+        {l:'Balaclava or neck gaiter',n:'Red Mountain Pass 30°F cooler than Durango'}
       ]},
       {section:'Comms + comfort',items:[
-        {l:'Bluetooth communicator — charged + paired',n:''},
-        {l:'Phone mount — secure, tested',n:'Test on a bump before the trip'},
-        {l:'USB charger on bike — working',n:''},
-        {l:'Earplugs — foam, dozen pairs',n:'2,500 miles of wind noise. Use them.'}
+        {l:'Bluetooth communicator — charged',n:''},
+        {l:'Phone mount — secure, tested',n:''},
+        {l:'Earplugs — foam, dozen pairs',n:''}
       ]}
     ],
     pack:[
       {section:'Clothing',items:[
-        {l:'5–6 days riding base layers',n:'Quick-dry synthetics. Do laundry in Durango.'},
-        {l:'2–3 casual outfits for evenings',n:'Jeans + HOG shirts covers most situations'},
-        {l:'Swimsuit',n:'Ouray hot springs, Lake Powell area'},
-        {l:'Light fleece or hoodie',n:'Durango evenings cool fast at 6,500 ft'},
-        {l:'Comfortable walking shoes',n:'Horseshoe Bend, Monument Valley, Arches'}
+        {l:'5–6 days riding base layers',n:'Quick-dry synthetics'},
+        {l:'2–3 casual outfits',n:'Jeans + HOG shirts'},
+        {l:'Swimsuit',n:'Ouray hot springs, Lake Powell'},
+        {l:'Light fleece or hoodie',n:'Durango evenings cool fast'},
+        {l:'Comfortable walking shoes',n:'Horseshoe Bend, Monument Valley'}
       ]},
       {section:'Health + hydration',items:[
-        {l:'Sunscreen SPF 50+ — large tube',n:'High altitude + desert UV. Reapply every 2 hrs.',x:true},
-        {l:'Lip balm with SPF',n:''},
-        {l:'Electrolyte packets — 20+',n:'Nuun, Liquid IV. One per day minimum.',x:true},
-        {l:'2L water on the bike',n:"Don't rely on finding water in Navajo Nation"},
-        {l:'Ibuprofen / Tylenol',n:''},
-        {l:'Prescription meds — full trip + 3 days extra',n:''},
-        {l:'First aid kit — compact',n:''},
-        {l:'Hand sanitizer + wet wipes',n:'Some Navajo Nation fuel stops have no running water'}
+        {l:'Sunscreen SPF 50+ — large tube',n:'',x:true},
+        {l:'Electrolyte packets — 20+',n:'One per day minimum.',x:true},
+        {l:'2L water on the bike',n:''},
+        {l:'Meds — full trip + 3 days extra',n:''},
+        {l:'First aid kit — compact',n:''}
       ]},
       {section:'Tech',items:[
-        {l:'Offline maps downloaded',n:'Navajo Nation + canyon country. Cell dies out there.',x:true},
+        {l:'Offline maps downloaded',n:'Navajo Nation + canyon country.',x:true},
         {l:'Portable battery bank — 20,000 mAh+',n:''},
-        {l:'All charging cables + adapters',n:''},
-        {l:'Camera / GoPro + mounts',n:''}
+        {l:'All charging cables',n:''}
       ]}
     ],
     admin:[
-      {section:'Documents — carry physical copies',items:[
+      {section:'Documents',items:[
         {l:'Motorcycle registration',n:'',x:true},
-        {l:'Proof of insurance — physical card',n:'Not just the app.',x:true},
+        {l:'Proof of insurance — physical card',n:'',x:true},
         {l:"Driver's license",n:''},
-        {l:'Health insurance card',n:''},
         {l:'HOG membership + rally confirmation',n:''},
-        {l:'Hotel confirmations saved offline',n:'Cell unreliable in canyon country'},
-        {l:'Emergency contact card',n:'Wallet + on the bike'},
-        {l:'Roadside assistance info',n:'HOG or AAA — know the number offline'}
+        {l:'Hotel confirmations saved offline',n:''}
       ]},
-      {section:'Book before you leave',items:[
-        {l:'All hotels confirmed',n:'Moab and Page especially — June oversells.',x:true},
-        {l:'America the Beautiful Pass purchased',n:'$80 at usgs.gov — covers Arches, Zion, Mesa Verde, Natural Bridges'},
-        {l:'Antelope Canyon tour booked (if desired)',n:'~$60 — books weeks out in summer'},
-        {l:'Zion timed entry permit',n:'Check recreation.gov — required in peak season.',x:true},
-        {l:'Bank notified — WA, ID, UT, CO, AZ, NV',n:'Remote pump in Navajo Nation with blocked card = very bad day'},
-        {l:'Rally registration completed',n:''},
-        {l:'Someone home has your full itinerary',n:''}
+      {section:'Before you leave',items:[
+        {l:'All hotels confirmed',n:'',x:true},
+        {l:'America the Beautiful Pass — $80',n:'Covers Arches, Zion, Mesa Verde, Natural Bridges'},
+        {l:'Zion timed entry permit',n:'recreation.gov',x:true},
+        {l:'Bank notified — WA, ID, UT, CO, AZ, NV',n:'',x:true},
+        {l:'Rally registration completed',n:''}
       ]}
     ],
     daily:[
-      {section:'Every morning before you ride',items:[
-        {l:'T-CLOCS walkround',n:'Tires · Controls · Lights · Oil · Chassis · Stands. 3 min.'},
-        {l:'Tire pressure — carry a gauge',n:''},
+      {section:'Every morning',items:[
+        {l:'T-CLOCS walkround',n:'Tires · Controls · Lights · Oil · Chassis · Stands'},
+        {l:'Tire pressure check',n:''},
         {l:'Luggage strapped — tug test',n:''},
-        {l:'Phone charged + offline maps loaded for today',n:''},
-        {l:'Rain gear accessible — not buried',n:''},
-        {l:'Water filled, electrolytes packed',n:''},
-        {l:'Sunscreen applied before suiting up',n:''},
-        {l:"Know today's fuel plan",n:'Next pump locations noted before leaving'},
-        {l:'Check weather — especially high passes',n:'weather.gov mountain forecasts'}
+        {l:'Rain gear accessible',n:''},
+        {l:'Water + electrolytes packed',n:''},
+        {l:'Sunscreen on before suiting up',n:''},
+        {l:"Today's fuel plan noted",n:''}
       ]},
-      {section:'High altitude reminders',items:[
-        {l:'Layer up before the pass',n:'Red Mountain Pass (11,018 ft) is 30°F cooler than Durango'},
-        {l:'Engine braking awareness on descents',n:"Don't ride the brakes continuously on MDH."},
-        {l:'Guardrail gaps on MDH — they exist',n:'Some sections have no barrier. Stay in your lane.'},
-        {l:'Altitude sickness awareness',n:'Headache, nausea above 8,000 ft. Drink water, go slow.'}
+      {section:'High altitude',items:[
+        {l:'Layer up before the pass',n:'Red Mountain Pass 30°F cooler than Durango'},
+        {l:'Engine braking on MDH descents',n:"Don't ride the brakes continuously"},
+        {l:'Altitude sickness awareness',n:'Headache, nausea above 8,000 ft'}
       ]}
     ]
   }
 };
 
 // ── State ─────────────────────────────────────────────────
-var ST={view:'home',tripId:null,tab:'overview',checkTab:'bike',editSecIdx:-1,editDayIdx:-1};
+var ST={view:'home',tripId:null,tab:'overview',checkTab:'bike',editSecIdx:-1,editDayIdx:-1,pvPhotoKey:null,pvDayId:null,pvPhotoIdx:-1,photoCallback:null};
 
-// ── Trip CRUD ─────────────────────────────────────────────
 function getTrips(){return S.get('rn_trips')||[];}
 function saveTrips(t){S.set('rn_trips',t);}
 function getTD(id){return S.get('rn_td_'+id);}
 function saveTD(id,d){S.set('rn_td_'+id,d);}
 function getChecks(id){return S.get('rn_ch_'+id)||{};}
 function saveChecks(id,d){S.set('rn_ch_'+id,d);}
+function getJournal(id){return S.get('rn_jrn_'+id)||{};}
+function saveJournal(id,d){S.set('rn_jrn_'+id,d);}
+function getPhotos(id){return S.get('rn_ph_'+id)||{};}
+function savePhotos(id,d){S.set('rn_ph_'+id,d);}
+function getOdo(id){return S.get('rn_odo_'+id)||{};}
+function saveOdo(id,d){S.set('rn_odo_'+id,d);}
 
 function initDefault(){
   var trips=getTrips();
@@ -432,46 +488,33 @@ function initDefault(){
   }
 }
 
-// ── URL ───────────────────────────────────────────────────
-function shareUrl(id){
-  return window.location.href.split('?')[0].split('#')[0]+'?trip='+encodeURIComponent(id);
-}
-function checkUrl(){
-  var p=new URLSearchParams(window.location.search);
-  var tid=p.get('trip');
-  if(tid&&getTD(tid)) openTrip(tid);
-}
-
-// ── Escape ────────────────────────────────────────────────
+function shareUrl(id){return window.location.href.split('?')[0].split('#')[0]+'?trip='+encodeURIComponent(id);}
+function checkUrl(){var p=new URLSearchParams(window.location.search);var tid=p.get('trip');if(tid&&getTD(tid))openTrip(tid);}
 function e(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
 
-// ── Tap ───────────────────────────────────────────────────
 function tap(el,fn){
-  if(!el) return;
+  if(!el)return;
   var t=false;
   el.addEventListener('touchend',function(ev){t=true;ev.preventDefault();fn(ev);setTimeout(function(){t=false;},300);},{passive:false});
   el.addEventListener('click',function(ev){if(!t)fn(ev);});
 }
 
-// ── Panels ────────────────────────────────────────────────
 function showPanel(id){
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
-  var el=document.getElementById(id);
-  if(el) el.classList.add('active');
+  var el=document.getElementById(id);if(el)el.classList.add('active');
 }
 function openModal(id){document.getElementById(id).classList.add('open');}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
 
 // ── Home ──────────────────────────────────────────────────
 function renderHome(){
-  ST.view='home'; ST.tripId=null;
+  ST.view='home';ST.tripId=null;
   document.getElementById('hdr-sub').textContent='Your Trips';
   document.getElementById('hdr-actions').innerHTML='';
   document.getElementById('main-nav').style.display='none';
   document.getElementById('bottom-nav').style.display='none';
   showPanel('view-home');
-
   var trips=getTrips();
   var list=document.getElementById('trip-list');
   if(!trips.length){
@@ -491,23 +534,20 @@ function renderHome(){
 
 // ── Open trip ─────────────────────────────────────────────
 function openTrip(id){
-  var data=getTD(id); if(!data) return;
-  ST.view='trip'; ST.tripId=id;
-
+  var data=getTD(id);if(!data)return;
+  ST.view='trip';ST.tripId=id;
   document.getElementById('hdr-sub').textContent=data.from+' → '+data.to;
-
   var ha=document.getElementById('hdr-actions');
   ha.innerHTML='<button class="hbtn" id="hb-back">← Trips</button><button class="hbtn primary" id="hb-share">Share</button>';
   tap(document.getElementById('hb-back'),function(){renderHome();});
-  tap(document.getElementById('hb-share'),function(){
-    document.getElementById('share-url').textContent=shareUrl(id);
-    openModal('modal-share');
-  });
+  tap(document.getElementById('hb-share'),function(){document.getElementById('share-url').textContent=shareUrl(id);openModal('modal-share');});
 
   var nav=document.getElementById('main-nav');
   nav.style.display='flex';
   nav.innerHTML='<div class="nav-tab" data-main="overview">Overview</div>'
     +data.sections.map(function(s){return '<div class="nav-tab" data-main="'+s.id+'">'+e(s.label)+'</div>';}).join('')
+    +'<div class="nav-tab" data-main="journal">Journal</div>'
+    +'<div class="nav-tab" data-main="weather">Weather</div>'
     +'<div class="nav-tab" data-main="checklist">Checklist</div>';
   nav.querySelectorAll('.nav-tab').forEach(function(tab){
     tap(tab,function(){showTab(tab.getAttribute('data-main'),data);});
@@ -515,10 +555,9 @@ function openTrip(id){
 
   var bn=document.getElementById('bottom-nav');
   bn.style.display='flex';
-  bn.innerHTML='<div class="bnav-item" data-main="overview"><div class="bnav-icon">◎</div><div class="bnav-label">Overview</div></div>'
-    +data.sections.map(function(s){
-      return '<div class="bnav-item" data-main="'+s.id+'"><div class="bnav-icon">'+e(s.icon)+'</div><div class="bnav-label">'+e(s.label)+'</div></div>';
-    }).join('')
+  bn.innerHTML='<div class="bnav-item" data-main="overview"><div class="bnav-icon">◎</div><div class="bnav-label">Trip</div></div>'
+    +'<div class="bnav-item" data-main="journal"><div class="bnav-icon">📷</div><div class="bnav-label">Journal</div></div>'
+    +'<div class="bnav-item" data-main="weather"><div class="bnav-icon">☀</div><div class="bnav-label">Weather</div></div>'
     +'<div class="bnav-item" data-main="checklist"><div class="bnav-icon">✓</div><div class="bnav-label">Checklist</div></div>';
   bn.querySelectorAll('.bnav-item').forEach(function(item){
     tap(item,function(){showTab(item.getAttribute('data-main'),data);});
@@ -528,13 +567,14 @@ function openTrip(id){
 }
 
 function showTab(tid,data){
-  if(!data) data=getTD(ST.tripId);
+  if(!data)data=getTD(ST.tripId);
   ST.tab=tid;
   document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.toggle('active',t.getAttribute('data-main')===tid);});
   document.querySelectorAll('.bnav-item').forEach(function(t){t.classList.toggle('active',t.getAttribute('data-main')===tid);});
-
   if(tid==='overview'){renderOverview(data);showPanel('panel-overview');}
   else if(tid==='checklist'){renderChecklist(data);showPanel('panel-checklist');}
+  else if(tid==='journal'){renderJournal(data);showPanel('panel-journal');}
+  else if(tid==='weather'){renderWeather(data);showPanel('panel-weather');}
   else {
     var sec=data.sections.find(function(s){return s.id===tid;});
     if(sec){renderSection(sec,data);showPanel('panel-'+tid);}
@@ -560,10 +600,10 @@ function renderOverview(data){
     +'<div class="tseg" style="flex:5;background:#78350f;color:#fef3c7">Return ↑</div>'
     +'</div>'
     +'<div class="sec-header">Highlights <button class="small-btn" id="btn-edit-trip-info" style="font-size:11px;padding:4px 8px">Edit Trip</button></div>'
-    +'<div class="tip good"><b>Devil\'s Highway (US-491)</b> — Day 4. Blanding → Bluff → Cortez → Durango. Remote red canyon walls, almost no traffic.</div>'
-    +'<div class="tip info"><b>Million Dollar Highway (US-550)</b> — Rally Day 1. North to Ouray first, then southbound back. Mountain wall on your LEFT all the way down Red Mountain Pass.</div>'
-    +'<div class="tip good"><b>Monument Valley</b> — Jun 14 dedicated overnight. Golden hour on the Mittens from the saddle.</div>'
-    +'<div class="tip critical"><b>Book NOW</b> — Moab, Page, and Monument Valley area hotels fill up weeks in advance in June.</div>'
+    +'<div class="tip good"><b>Devil\'s Highway (US-491)</b> — Day 4. Blanding → Bluff → Cortez into Durango. Remote, raw, almost no traffic.</div>'
+    +'<div class="tip info"><b>Million Dollar Highway (US-550)</b> — Rally Day 1. North to Ouray, then southbound back. Mountain wall on LEFT all the way down Red Mountain Pass.</div>'
+    +'<div class="tip good"><b>Monument Valley</b> — Jun 14 dedicated overnight. Golden hour on the Mittens.</div>'
+    +'<div class="tip critical"><b>Book NOW</b> — Moab, Page, and Monument Valley fill up in June weeks in advance.</div>'
     +'<div class="tip critical"><b>Notify your bank</b> — Flag WA, ID, UT, CO, AZ, NV before leaving.</div>';
 
   tap(document.getElementById('btn-edit-trip-info'),function(){
@@ -581,7 +621,7 @@ function renderOverview(data){
   });
 }
 
-// ── Section (days) ────────────────────────────────────────
+// ── Section ───────────────────────────────────────────────
 function renderSection(sec,data){
   var el=document.getElementById('panel-'+sec.id);
   var html='<div class="sec-header">'+e(sec.label)
@@ -612,78 +652,416 @@ function renderSection(sec,data){
   });
 
   el.innerHTML=html;
-
   el.querySelectorAll('.card-header').forEach(function(h){
     tap(h,function(){
-      var body=h.nextElementSibling;
-      var chev=h.querySelector('.card-chev');
+      var body=h.nextElementSibling;var chev=h.querySelector('.card-chev');
       var open=body.classList.contains('open');
       body.classList.toggle('open',!open);
-      if(chev) chev.style.transform=open?'':'rotate(180deg)';
+      if(chev)chev.style.transform=open?'':'rotate(180deg)';
     });
   });
-
   el.querySelectorAll('.edit-day-btn').forEach(function(btn){
     tap(btn,function(){openEditDay(btn.getAttribute('data-editday'),btn.getAttribute('data-editsec'),data);});
   });
-
   var addBtn=el.querySelector('[data-adddaysec]');
   if(addBtn){
     tap(addBtn,function(){
       var secIdx=data.sections.findIndex(function(s){return s.id===addBtn.getAttribute('data-adddaysec');});
-      ST.editSecIdx=secIdx; ST.editDayIdx=-1;
+      ST.editSecIdx=secIdx;ST.editDayIdx=-1;
       document.getElementById('modal-day-title').textContent='Add Day';
-      document.getElementById('ed-date').value='';
-      document.getElementById('ed-title').value='';
-      document.getElementById('ed-miles').value='';
-      document.getElementById('ed-hotel').value='';
+      ['ed-date','ed-title','ed-miles','ed-hotel'].forEach(function(id){document.getElementById(id).value='';});
       document.getElementById('ed-stops').innerHTML='';
       openModal('modal-day');
     });
   }
 }
 
-// ── Edit day ──────────────────────────────────────────────
-function openEditDay(dayId,secId,data){
-  var secIdx=data.sections.findIndex(function(s){return s.id===secId;});
-  var sec=data.sections[secIdx];
-  var dayIdx=sec.days.findIndex(function(d){return d.id===dayId;});
-  var day=sec.days[dayIdx];
-  ST.editSecIdx=secIdx; ST.editDayIdx=dayIdx;
+// ── Journal ───────────────────────────────────────────────
+function renderJournal(data){
+  var el=document.getElementById('panel-journal');
+  var jrn=getJournal(ST.tripId);
+  var odo=getOdo(ST.tripId);
+  var photos=getPhotos(ST.tripId);
 
-  document.getElementById('modal-day-title').textContent='Edit Day';
-  document.getElementById('ed-date').value=day.date||'';
-  document.getElementById('ed-title').value=day.title||'';
-  document.getElementById('ed-miles').value=day.miles||'';
-  document.getElementById('ed-hotel').value=day.hotel||'';
-  renderEditStops(day.stops||[]);
-  openModal('modal-day');
-}
+  var allDays=[];
+  data.sections.forEach(function(sec){
+    sec.days.forEach(function(day){allDays.push({day:day,secId:sec.id});});
+  });
 
-function renderEditStops(stops){
-  var list=document.getElementById('ed-stops');
-  list.innerHTML=stops.map(function(s,i){
-    return '<div class="stop-edit-row" data-si="'+i+'">'
-      +'<div class="stop-edit-inputs">'
-      +'<input class="edit-field sn" placeholder="Stop name" value="'+e(s.n||'')+'">'
-      +'<input class="edit-field st" placeholder="Note (optional)" value="'+e(s.t||'')+'">'
+  var html='<div class="sec-header">Trip Journal</div>';
+
+  allDays.forEach(function(entry){
+    var day=entry.day;
+    var dayJrn=jrn[day.id]||{};
+    var dayOdo=odo[day.id]||{};
+    var dayPhotos=photos[day.id]||[];
+    var prevDayOdo=0;
+    var allDayIds=allDays.map(function(d){return d.day.id;});
+    var idx=allDayIds.indexOf(day.id);
+    if(idx>0){var prevDay=allDays[idx-1].day;var prevOdo=odo[prevDay.id]||{};prevDayOdo=prevOdo.end||0;}
+    var diff=dayOdo.end&&dayOdo.start?(dayOdo.end-dayOdo.start):0;
+
+    html+='<div class="journal-day">'
+      +'<div class="journal-day-header">'
+      +'<div class="journal-day-date">'+e(day.date)+'</div>'
+      +'<div class="journal-day-title">'+e(day.title)+'</div>'
       +'</div>'
-      +'<button class="stop-del-btn" data-ds="'+i+'">✕</button>'
-      +'</div>';
-  }).join('');
-  list.querySelectorAll('[data-ds]').forEach(function(btn){
-    tap(btn,function(){btn.closest('.stop-edit-row').remove();});
+      +'<div class="journal-day-body">'
+
+      // Odometer
+      +'<div class="journal-odometer">'
+      +'<div class="odo-label">Start</div>'
+      +'<input class="odo-input" data-odo="'+e(day.id)+'" data-odofield="start" placeholder="00000" value="'+e(dayOdo.start||'')+'" type="number" inputmode="numeric">'
+      +'<div class="odo-label" style="margin-left:6px">End</div>'
+      +'<input class="odo-input" data-odo="'+e(day.id)+'" data-odofield="end" placeholder="00000" value="'+e(dayOdo.end||'')+'" type="number" inputmode="numeric">'
+      +'<div class="odo-unit">mi</div>'
+      +(diff>0?'<div class="odo-diff">'+diff+' mi today</div>':'')
+      +'</div>'
+
+      // Journal note
+      +'<textarea class="journal-note-input" data-note="'+e(day.id)+'" placeholder="Notes from today\'s ride...">'+e(dayJrn.note||'')+'</textarea>'
+
+      // Weather for this day
+      +'<div class="j-weather" id="jw-'+e(day.id)+'">'
+      +'<div class="j-weather-icon">☁</div>'
+      +'<div class="j-weather-info"><div class="j-weather-loc">Tap to load weather</div><div class="j-weather-desc">for '+e(day.title)+'</div></div>'
+      +'<button class="j-weather-btn" data-loadweather="'+e(day.id)+'" data-city="'+e(day.title)+'">Load</button>'
+      +'</div>'
+
+      // Photos
+      +'<div style="margin-bottom:6px;font-family:\'Barlow Condensed\',sans-serif;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--smoke)">Photos ('+dayPhotos.length+')</div>'
+      +'<div class="j-photo-grid" id="pg-'+e(day.id)+'">';
+
+    dayPhotos.forEach(function(ph,pi){
+      html+='<img class="j-photo-thumb" src="'+ph.data+'" data-viewphoto="'+e(day.id)+'" data-photoidx="'+pi+'" alt="">';
+    });
+    html+='<div class="j-photo-add" data-addphoto="'+e(day.id)+'"><span>+</span></div>'
+      +'</div>'
+
+      // Share row
+      +'<div class="j-share-row">'
+      +(dayPhotos.length>0?'<button class="share-btn native" data-sharenative="'+e(day.id)+'">📤 Share</button>':'')
+      +'<button class="share-btn fb" data-sharefb="'+e(day.id)+'">f Share to Facebook</button>'
+      +'</div>'
+
+      +'</div></div>';
+  });
+
+  el.innerHTML=html;
+
+  // Odometer inputs
+  el.querySelectorAll('[data-odo]').forEach(function(input){
+    input.addEventListener('change',function(){
+      var dayId=input.getAttribute('data-odo');
+      var field=input.getAttribute('data-odofield');
+      var val=parseInt(input.value)||0;
+      var odoData=getOdo(ST.tripId);
+      if(!odoData[dayId])odoData[dayId]={};
+      odoData[dayId][field]=val;
+      saveOdo(ST.tripId,odoData);
+      // Update diff display
+      var start=odoData[dayId].start||0;
+      var end=odoData[dayId].end||0;
+      var diff=end&&start?end-start:0;
+      var row=input.closest('.journal-odometer');
+      var diffEl=row.querySelector('.odo-diff');
+      if(diff>0){
+        if(!diffEl){diffEl=document.createElement('div');diffEl.className='odo-diff';row.appendChild(diffEl);}
+        diffEl.textContent=diff+' mi today';
+      } else if(diffEl){diffEl.textContent='';}
+    });
+  });
+
+  // Journal notes
+  el.querySelectorAll('[data-note]').forEach(function(ta){
+    ta.addEventListener('blur',function(){
+      var dayId=ta.getAttribute('data-note');
+      var jrnData=getJournal(ST.tripId);
+      if(!jrnData[dayId])jrnData[dayId]={};
+      jrnData[dayId].note=ta.value;
+      saveJournal(ST.tripId,jrnData);
+    });
+  });
+
+  // Add photo buttons
+  el.querySelectorAll('[data-addphoto]').forEach(function(btn){
+    tap(btn,function(){
+      ST.photoCallback=btn.getAttribute('data-addphoto');
+      document.getElementById('photo-file-input').click();
+    });
+  });
+
+  // View photos
+  el.querySelectorAll('[data-viewphoto]').forEach(function(img){
+    tap(img,function(){
+      var dayId=img.getAttribute('data-viewphoto');
+      var idx=parseInt(img.getAttribute('data-photoidx'));
+      openPhotoViewer(dayId,idx);
+    });
+  });
+
+  // Load weather buttons
+  el.querySelectorAll('[data-loadweather]').forEach(function(btn){
+    tap(btn,function(){
+      var dayId=btn.getAttribute('data-loadweather');
+      var title=btn.getAttribute('data-city');
+      loadWeatherForDay(dayId,title);
+    });
+  });
+
+  // FB share
+  el.querySelectorAll('[data-sharefb]').forEach(function(btn){
+    tap(btn,function(){
+      var dayId=btn.getAttribute('data-sharefb');
+      shareToFacebook(dayId);
+    });
+  });
+
+  // Native share
+  el.querySelectorAll('[data-sharenative]').forEach(function(btn){
+    tap(btn,function(){
+      var dayId=btn.getAttribute('data-sharenative');
+      shareNative(dayId);
+    });
   });
 }
 
-function getEditStops(){
-  var stops=[];
-  document.querySelectorAll('#ed-stops .stop-edit-row').forEach(function(row){
-    var n=row.querySelector('.sn').value.trim();
-    var t=row.querySelector('.st').value.trim();
-    if(n) stops.push({n:n,t:t,c:'#f59e0b'});
+// ── Photo handling ────────────────────────────────────────
+document.getElementById('photo-file-input').addEventListener('change',function(ev){
+  var files=ev.target.files;
+  if(!files||!files.length||!ST.photoCallback) return;
+  var dayId=ST.photoCallback;
+  Array.from(files).forEach(function(file){
+    var reader=new FileReader();
+    reader.onload=function(e2){
+      var photos=getPhotos(ST.tripId);
+      if(!photos[dayId])photos[dayId]=[];
+      photos[dayId].push({data:e2.target.result,name:file.name,ts:Date.now()});
+      try{savePhotos(ST.tripId,photos);}catch(err){alert('Storage full — try removing some photos first.');}
+      // Update grid
+      var grid=document.getElementById('pg-'+dayId);
+      if(grid){
+        var idx=photos[dayId].length-1;
+        var img=document.createElement('img');
+        img.className='j-photo-thumb';
+        img.src=e2.target.result;
+        img.setAttribute('data-viewphoto',dayId);
+        img.setAttribute('data-photoidx',String(idx));
+        tap(img,function(){openPhotoViewer(dayId,idx);});
+        grid.insertBefore(img,grid.querySelector('.j-photo-add'));
+        // Update count label
+        var countEl=grid.previousElementSibling;
+        if(countEl)countEl.textContent='Photos ('+photos[dayId].length+')';
+        // Show native share button if not already
+        var shareRow=grid.nextElementSibling;
+        if(shareRow&&!shareRow.querySelector('[data-sharenative]')){
+          var nb=document.createElement('button');
+          nb.className='share-btn native';
+          nb.setAttribute('data-sharenative',dayId);
+          nb.textContent='📤 Share';
+          tap(nb,function(){shareNative(dayId);});
+          shareRow.insertBefore(nb,shareRow.firstChild);
+        }
+      }
+    };
+    reader.readAsDataURL(file);
   });
-  return stops;
+  ev.target.value='';
+  ST.photoCallback=null;
+});
+
+// ── Photo viewer ──────────────────────────────────────────
+function openPhotoViewer(dayId,idx){
+  var photos=getPhotos(ST.tripId);
+  var dayPhotos=photos[dayId]||[];
+  if(!dayPhotos[idx])return;
+  ST.pvDayId=dayId; ST.pvPhotoIdx=idx;
+  var ph=dayPhotos[idx];
+  document.getElementById('pv-img').src=ph.data;
+  var jrn=getJournal(ST.tripId);
+  var note=(jrn[dayId]&&jrn[dayId].note)||'';
+  document.getElementById('pv-caption').textContent=note||'';
+  var actions=document.getElementById('pv-actions');
+  actions.innerHTML='';
+
+  var delBtn=document.createElement('button');
+  delBtn.className='share-btn native';delBtn.textContent='🗑 Delete';
+  tap(delBtn,function(){
+    if(!confirm('Delete this photo?'))return;
+    var ph2=getPhotos(ST.tripId);
+    ph2[dayId].splice(idx,1);
+    savePhotos(ST.tripId,ph2);
+    document.getElementById('photo-viewer').classList.remove('open');
+    renderJournal(getTD(ST.tripId));
+  });
+  actions.appendChild(delBtn);
+
+  var shareBtn=document.createElement('button');
+  shareBtn.className='share-btn fb';shareBtn.textContent='f Share to Facebook';
+  tap(shareBtn,function(){shareToFacebook(dayId);});
+  actions.appendChild(shareBtn);
+
+  if(navigator.share){
+    var natBtn=document.createElement('button');
+    natBtn.className='share-btn native';natBtn.textContent='📤 Share';
+    tap(natBtn,function(){shareNative(dayId);});
+    actions.appendChild(natBtn);
+  }
+
+  document.getElementById('photo-viewer').classList.add('open');
+}
+
+// ── Share functions ───────────────────────────────────────
+function shareToFacebook(dayId){
+  var data=getTD(ST.tripId);
+  var allDays=[];
+  data.sections.forEach(function(s){s.days.forEach(function(d){allDays.push(d);});});
+  var day=allDays.find(function(d){return d.id===dayId;});
+  var jrn=getJournal(ST.tripId);
+  var note=(jrn[dayId]&&jrn[dayId].note)||'';
+  var caption=encodeURIComponent('Day on the road: '+((day&&day.title)||'')+'\n'+note+'\n#RumblingNomad #motorcycle #HOG');
+  var url=encodeURIComponent(shareUrl(ST.tripId));
+  window.open('https://www.facebook.com/sharer/sharer.php?u='+url+'&quote='+caption,'_blank');
+}
+
+function shareNative(dayId){
+  var photos=getPhotos(ST.tripId);
+  var dayPhotos=photos[dayId]||[];
+  var data=getTD(ST.tripId);
+  var allDays=[];
+  data.sections.forEach(function(s){s.days.forEach(function(d){allDays.push(d);});});
+  var day=allDays.find(function(d){return d.id===dayId;});
+  var jrn=getJournal(ST.tripId);
+  var note=(jrn[dayId]&&jrn[dayId].note)||'';
+  var text='Day on the road: '+((day&&day.title)||'')+'\n'+note+'\n#RumblingNomad';
+
+  if(navigator.share){
+    var shareData={title:'Rumbling Nomad',text:text,url:shareUrl(ST.tripId)};
+    if(dayPhotos.length>0&&navigator.canShare){
+      fetch(dayPhotos[dayPhotos.length-1].data)
+        .then(function(r){return r.blob();})
+        .then(function(blob){
+          var file=new File([blob],'ride-photo.jpg',{type:'image/jpeg'});
+          if(navigator.canShare({files:[file]})){
+            shareData.files=[file];
+          }
+          navigator.share(shareData).catch(function(){});
+        }).catch(function(){navigator.share(shareData).catch(function(){});});
+    } else {
+      navigator.share(shareData).catch(function(){});
+    }
+  } else {
+    shareToFacebook(dayId);
+  }
+}
+
+// ── Weather ───────────────────────────────────────────────
+var WEATHER_ICONS={'Clear':'☀️','Clouds':'☁️','Rain':'🌧️','Drizzle':'🌦️','Thunderstorm':'⛈️','Snow':'❄️','Mist':'🌫️','Fog':'🌫️','Haze':'🌫️'};
+
+function extractCity(title){
+  var parts=title.split('→');
+  var dest=parts[parts.length-1].trim();
+  dest=dest.replace(/overnight|arrive|🏠/gi,'').trim();
+  dest=dest.split(',')[0].trim();
+  dest=dest.split('–')[0].trim();
+  return dest;
+}
+
+function loadWeatherForDay(dayId,title){
+  var city=extractCity(title);
+  var wcard=document.getElementById('jw-'+dayId);
+  if(!wcard)return;
+  wcard.innerHTML='<div class="j-weather-icon">⏳</div><div class="j-weather-info"><div class="j-weather-loc">Loading weather for '+e(city)+'...</div></div>';
+  fetch('https://wttr.in/'+encodeURIComponent(city)+'?format=j1')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var cur=data.current_condition[0];
+      var desc=cur.weatherDesc[0].value;
+      var tempF=cur.temp_F;
+      var tempC=cur.temp_C;
+      var icon=WEATHER_ICONS[desc]||'🌡️';
+      wcard.innerHTML='<div class="j-weather-icon">'+icon+'</div>'
+        +'<div class="j-weather-info"><div class="j-weather-loc">'+e(city)+'</div>'
+        +'<div class="j-weather-desc">'+e(desc)+'</div></div>'
+        +'<div class="j-weather-temp">'+e(tempF)+'°F</div>';
+    })
+    .catch(function(){
+      wcard.innerHTML='<div class="j-weather-icon">❓</div>'
+        +'<div class="j-weather-info"><div class="j-weather-loc">Weather unavailable</div>'
+        +'<div class="j-weather-desc">Check weather.gov for '+e(city)+'</div></div>';
+    });
+}
+
+// ── Weather tab ───────────────────────────────────────────
+function renderWeather(data){
+  var el=document.getElementById('panel-weather');
+  el.innerHTML='<div class="sec-header">Trip Weather</div>'
+    +'<p style="font-size:13px;color:var(--smoke);margin-bottom:14px;line-height:1.6">Current conditions at each destination. Tap any location to refresh.</p>';
+
+  var cities=[
+    {name:'Spokane, WA',label:'Day 1 Start'},
+    {name:'Boise, ID',label:'Night 1'},
+    {name:'Salt Lake City, UT',label:'Night 2'},
+    {name:'Moab, UT',label:'Night 3'},
+    {name:'Durango, CO',label:'Base Camp'},
+    {name:'Silverton, CO',label:'Million Dollar Hwy'},
+    {name:'Monument Valley, AZ',label:'Night 8'},
+    {name:'Page, AZ',label:'Night 9'},
+    {name:'Zion National Park, UT',label:'Night 10'},
+    {name:'Winnemucca, NV',label:'Night 11'}
+  ];
+
+  var html='';
+  cities.forEach(function(city){
+    html+='<div class="weather-card" id="wc-'+encodeURIComponent(city.name)+'" data-city="'+e(city.name)+'" data-label="'+e(city.label)+'">'
+      +'<div class="weather-icon">⏳</div>'
+      +'<div class="weather-info">'
+      +'<div class="weather-loc">'+e(city.name)+'</div>'
+      +'<div class="weather-desc">'+e(city.label)+' · Loading...</div>'
+      +'</div>'
+      +'<div class="weather-temps">--°</div>'
+      +'</div>';
+  });
+  el.innerHTML+='<div>'+html+'</div>';
+
+  // Load weather for each city
+  cities.forEach(function(city){
+    loadWeatherCard(city.name,city.label);
+  });
+
+  // Tap to refresh
+  el.querySelectorAll('.weather-card').forEach(function(card){
+    tap(card,function(){
+      var name=card.getAttribute('data-city');
+      var label=card.getAttribute('data-label');
+      loadWeatherCard(name,label);
+    });
+  });
+}
+
+function loadWeatherCard(city,label){
+  var id='wc-'+encodeURIComponent(city);
+  var card=document.getElementById(id);
+  if(!card)return;
+  fetch('https://wttr.in/'+encodeURIComponent(city)+'?format=j1')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var cur=data.current_condition[0];
+      var desc=cur.weatherDesc[0].value;
+      var tempF=cur.temp_F;
+      var hi=data.weather[0].maxtempF;
+      var lo=data.weather[0].mintempF;
+      var icon=WEATHER_ICONS[desc.split(' ')[0]]||'🌡️';
+      card.querySelector('.weather-icon').textContent=icon;
+      card.querySelector('.weather-loc').textContent=city;
+      card.querySelector('.weather-desc').textContent=label+' · '+desc+' · Hi '+hi+'° Lo '+lo+'°';
+      card.querySelector('.weather-temps').textContent=tempF+'°F';
+    })
+    .catch(function(){
+      card.querySelector('.weather-icon').textContent='❓';
+      card.querySelector('.weather-desc').textContent=label+' · Tap to retry';
+      card.querySelector('.weather-temps').textContent='--°';
+    });
 }
 
 // ── Checklist ─────────────────────────────────────────────
@@ -727,7 +1105,6 @@ function renderChecklist(data){
 
   el.innerHTML=html;
 
-  // Tab switch
   el.querySelectorAll('.check-tab').forEach(function(tab){
     tap(tab,function(){
       ST.checkTab=tab.getAttribute('data-ck');
@@ -736,43 +1113,34 @@ function renderChecklist(data){
     });
   });
 
-  // Toggle check
   el.querySelectorAll('.check-item').forEach(function(item){
     tap(item,function(ev){
-      if(ev.target.classList.contains('check-del')) return;
+      if(ev.target.classList.contains('check-del'))return;
       var key=item.getAttribute('data-key');
       var box=item.querySelector('.check-box');
       var lbl=item.querySelector('.check-label');
       var done=!box.classList.contains('done');
-      box.classList.toggle('done',done);
-      lbl.classList.toggle('done',done);
-      var ch=getChecks(ST.tripId);
-      ch[key]=done;
-      saveChecks(ST.tripId,ch);
+      box.classList.toggle('done',done);lbl.classList.toggle('done',done);
+      var ch=getChecks(ST.tripId);ch[key]=done;saveChecks(ST.tripId,ch);
       updateProg(el);
     });
   });
 
-  // Delete item
   el.querySelectorAll('[data-delck]').forEach(function(btn){
     tap(btn,function(){
-      var ch=getChecks(ST.tripId);
-      delete ch[btn.getAttribute('data-delck')];
-      saveChecks(ST.tripId,ch);
-      btn.closest('.check-item').remove();
-      updateProg(el);
+      var ch=getChecks(ST.tripId);delete ch[btn.getAttribute('data-delck')];saveChecks(ST.tripId,ch);
+      btn.closest('.check-item').remove();updateProg(el);
     });
   });
 
-  // Add item
   el.querySelectorAll('[data-addck]').forEach(function(btn){
     tap(btn,function(){
       var sk=btn.getAttribute('data-addck');
       var input=el.querySelector('[data-addsec="'+sk+'"]');
-      var val=input.value.trim(); if(!val) return;
+      var val=input.value.trim();if(!val)return;
       var key=sk+'||custom||'+Date.now();
       var div=document.createElement('div');
-      div.className='check-item'; div.setAttribute('data-key',key);
+      div.className='check-item';div.setAttribute('data-key',key);
       div.innerHTML='<div class="check-box"></div>'
         +'<div style="flex:1"><div class="check-label">'+e(val)+'</div></div>'
         +'<button class="check-del" data-delck="'+e(key)+'">✕</button>';
@@ -790,14 +1158,12 @@ function renderChecklist(data){
     });
   });
 
-  // Reset
   tap(document.getElementById('cl-reset'),function(){
     saveChecks(ST.tripId,{});
     el.querySelectorAll('.check-box').forEach(function(b){b.classList.remove('done');});
     el.querySelectorAll('.check-label').forEach(function(l){l.classList.remove('done');});
     updateProg(el);
   });
-
   updateProg(el);
 }
 
@@ -807,15 +1173,60 @@ function updateProg(el){
   var pct=all.length?Math.round(done.length/all.length*100):0;
   var fill=document.getElementById('prog-fill');
   var lbl=document.getElementById('prog-lbl');
-  if(fill) fill.style.width=pct+'%';
-  if(lbl) lbl.textContent=done.length+' of '+all.length+' checked';
+  if(fill)fill.style.width=pct+'%';
+  if(lbl)lbl.textContent=done.length+' of '+all.length+' checked';
+}
+
+// ── Edit day ──────────────────────────────────────────────
+function openEditDay(dayId,secId,data){
+  var secIdx=data.sections.findIndex(function(s){return s.id===secId;});
+  var sec=data.sections[secIdx];
+  var dayIdx=sec.days.findIndex(function(d){return d.id===dayId;});
+  var day=sec.days[dayIdx];
+  ST.editSecIdx=secIdx;ST.editDayIdx=dayIdx;
+  document.getElementById('modal-day-title').textContent='Edit Day';
+  document.getElementById('ed-date').value=day.date||'';
+  document.getElementById('ed-title').value=day.title||'';
+  document.getElementById('ed-miles').value=day.miles||'';
+  document.getElementById('ed-hotel').value=day.hotel||'';
+  renderEditStops(day.stops||[]);
+  openModal('modal-day');
+}
+
+function renderEditStops(stops){
+  var list=document.getElementById('ed-stops');
+  list.innerHTML=stops.map(function(s,i){
+    return '<div class="stop-edit-row" data-si="'+i+'">'
+      +'<div class="stop-edit-inputs">'
+      +'<input class="edit-field sn" placeholder="Stop name" value="'+e(s.n||'')+'">'
+      +'<input class="edit-field st" placeholder="Note (optional)" value="'+e(s.t||'')+'">'
+      +'</div>'
+      +'<button class="stop-del-btn" data-ds="'+i+'">✕</button>'
+      +'</div>';
+  }).join('');
+  list.querySelectorAll('[data-ds]').forEach(function(btn){
+    tap(btn,function(){btn.closest('.stop-edit-row').remove();});
+  });
+}
+
+function getEditStops(){
+  var stops=[];
+  document.querySelectorAll('#ed-stops .stop-edit-row').forEach(function(row){
+    var n=row.querySelector('.sn').value.trim();
+    var t=row.querySelector('.st').value.trim();
+    if(n)stops.push({n:n,t:t,c:'#f59e0b'});
+  });
+  return stops;
 }
 
 // ── Boot ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',function(){
   initDefault();
 
-  // New trip button
+  // Photo viewer close
+  tap(document.getElementById('pv-close'),function(){document.getElementById('photo-viewer').classList.remove('open');});
+
+  // New trip
   tap(document.getElementById('btn-new-trip'),function(){
     document.getElementById('modal-trip-title').textContent='New Trip';
     document.getElementById('btn-save-trip').textContent='Create Trip';
@@ -833,9 +1244,8 @@ document.addEventListener('DOMContentLoaded',function(){
     var start=document.getElementById('nt-start').value.trim();
     var end=document.getElementById('nt-end').value.trim();
     var tag=document.getElementById('nt-tag').value.trim();
-    if(!name||!from||!to) return;
+    if(!name||!from||!to)return;
     var btn=document.getElementById('btn-save-trip');
-
     if(btn._mode==='edit'&&btn._id){
       var data=getTD(btn._id);
       data.name=name;data.from=from;data.to=to;data.startDate=start;data.endDate=end;data.tagline=tag;
@@ -844,8 +1254,7 @@ document.addEventListener('DOMContentLoaded',function(){
       var t=trips.find(function(x){return x.id===btn._id;});
       if(t){t.name=name;t.from=from;t.to=to;t.startDate=start;t.endDate=end;}
       saveTrips(trips);
-      closeModal('modal-trip');
-      openTrip(btn._id);
+      closeModal('modal-trip');openTrip(btn._id);
     } else {
       var id='trip_'+Date.now();
       var nd={id:id,name:name,from:from,to:to,startDate:start,endDate:end,tagline:tag,
@@ -856,18 +1265,16 @@ document.addEventListener('DOMContentLoaded',function(){
           {id:'return',label:'Return',icon:'↑',days:[]}
         ],
         checklist:{bike:[{section:'Bike',items:[]}],gear:[{section:'Gear',items:[]}],
-          pack:[{section:'Packing',items:[]}],admin:[{section:'Admin',items:[]}],
-          daily:[{section:'Daily',items:[]}]}
+          pack:[{section:'Packing',items:[]}],admin:[{section:'Admin',items:[]}],daily:[{section:'Daily',items:[]}]}
       };
       var trips=getTrips();
       trips.unshift({id:id,name:name,from:from,to:to,startDate:start,endDate:end});
       saveTrips(trips);saveTD(id,nd);
-      closeModal('modal-trip');
-      openTrip(id);
+      closeModal('modal-trip');openTrip(id);
     }
   });
 
-  // Edit day modal
+  // Edit day
   tap(document.getElementById('ed-add-stop'),function(){
     var list=document.getElementById('ed-stops');
     var row=document.createElement('div');
@@ -893,7 +1300,7 @@ document.addEventListener('DOMContentLoaded',function(){
       hotel:document.getElementById('ed-hotel').value.trim(),
       stops:getEditStops()
     };
-    if(ST.editDayIdx>=0) sec.days[ST.editDayIdx]=day;
+    if(ST.editDayIdx>=0)sec.days[ST.editDayIdx]=day;
     else sec.days.push(day);
     saveTD(ST.tripId,data);
     closeModal('modal-day');
@@ -901,7 +1308,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 
   tap(document.getElementById('ed-delete'),function(){
-    if(!confirm('Delete this day?')) return;
+    if(!confirm('Delete this day?'))return;
     var data=getTD(ST.tripId);
     var sec=data.sections[ST.editSecIdx];
     sec.days.splice(ST.editDayIdx,1);
@@ -924,9 +1331,8 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   });
 
-  // Close modals on overlay tap
   document.querySelectorAll('.modal-overlay').forEach(function(ov){
-    tap(ov,function(ev){if(ev.target===ov) ov.classList.remove('open');});
+    tap(ov,function(ev){if(ev.target===ov)ov.classList.remove('open');});
   });
 
   renderHome();
